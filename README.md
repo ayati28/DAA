@@ -18,8 +18,8 @@
 
 <br><br>
 
-**Student Name:** Ayati Kumawat 
-**Enrollment Number:** 240027
+**Student Name:** Mahi Sharma
+**Enrollment Number:** 240147
 
 <br>
 
@@ -957,4 +957,298 @@ Peak Memory: 3993048 bytes
 ```
 <img width="927" height="567" alt="1" src="https://github.com/user-attachments/assets/72161281-a154-4f7a-9200-7a7a899b559b" />
 
-[Back to Index](#i
+[Back to Index](#index)
+
+# Program 14: Mathematical Functions in Python
+
+## Aim
+
+To write a Python program to calculate the square root, square, ceiling, and floor of a given number using the math module.
+
+## Program
+
+```python
+import math
+n = float(input("Enter a number: "))
+print("Square root:", math.sqrt(n))
+print("Square:", math.pow(n, 2))
+print("Ceiling:", math.ceil(n))
+print("Floor:", math.floor(n))
+```
+
+## Sample Output
+
+```text
+Enter a number: 2.2
+Square root: 1.4832396974191326
+Square: 4.840000000000001
+Ceiling: 3
+Floor: 2
+```
+
+[Back to Index](#index)
+
+# Program 15: Directed Graph
+
+## Aim
+
+To implement a directed graph using Python.
+
+## Program
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+class Graph:
+    def __init__(self):
+        self.nodes = []
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+    def add_edge(self, node1, node2):
+        node1.neighbors.append(node2)
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor in node.neighbors:
+                print(neighbor.data, end=" ")
+            print()
+g = Graph()
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+g.add_edge(A, B)
+g.add_edge(A, C)
+g.add_edge(B, D)
+g.add_edge(C, D)
+g.add_edge(D, A)
+g.print_graph()
+```
+
+## Sample Output
+
+```text
+A -> B C 
+B -> D 
+C -> D 
+D -> A 
+```
+
+[Back to Index](#index)
+
+# Program 16: Undirected Graph
+
+## Aim
+
+To implement an undirected graph using Python.
+
+## Program
+
+```python
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2):
+        node1.neighbors.append(node2)
+        node2.neighbors.append(node1)
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor in node.neighbors:
+                print(neighbor.data, end=" ")
+            print()
+
+g = Graph()
+
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+
+g.add_edge(A, B)
+g.add_edge(A, C)
+g.add_edge(B, D)
+g.add_edge(C, D)
+g.add_edge(D, A)
+
+g.print_graph()
+
+```
+
+## Sample Output
+
+```text
+A -> B C D 
+B -> A D 
+C -> A D 
+D -> B C A 
+```
+
+[Back to Index](#index)
+
+# Program 17: Weighted Graph
+
+## Aim
+
+To implement a weighted graph using Python.
+
+## Program
+
+```python
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2, weight):
+        node1.neighbors.append((node2, weight))
+        node2.neighbors.append((node1, weight))
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor, weight in node.neighbors:
+                print(f"({neighbor.data}, {weight})", end=" ")
+            print()
+
+g = Graph()
+
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+
+g.add_edge(A, B, 10)
+g.add_edge(A, C, 20)
+g.add_edge(B, D, 30)
+g.add_edge(C, D, 40)
+g.add_edge(D, A, 50)
+
+g.print_graph()
+
+```
+
+## Sample Output
+
+```text
+ A -> (B, 10) (C, 20) (D, 50) 
+B -> (A, 10) (D, 30) 
+C -> (A, 20) (D, 40) 
+D -> (B, 30) (C, 40) (A, 50)
+```
+
+[Back to Index](#index)
+
+# Program 18: Directed weighted Graph
+
+## Aim
+
+To implement a directed weighted graph using Python.
+
+## Program
+
+```python
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2, weight):
+        node1.neighbors.append((node2, weight))
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor, weight in node.neighbors:
+                print(f"({neighbor.data}, {weight})", end=" ")
+            print()
+
+g = Graph()
+
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+
+g.add_edge(A, B, 10)
+g.add_edge(A, C, 20)
+g.add_edge(B, D, 30)
+g.add_edge(C, D, 40)
+g.add_edge(D, A, 50)
+
+g.print_graph()
+
+```
+
+## Sample Output
+
+```text
+A -> (B, 10) (C, 20) 
+B -> (D, 30) 
+C -> (D, 40) 
+D -> (A, 50) 
+```
+
+[Back to Index](#index)
+
+# Program 19: Plotting a Simple Line Graph Using Python
+
+## Aim
+
+To write a Python program to plot a simple line graph using Matplotlib.
+
+## Program
+
+```python
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 30, 25]
+plt.plot(x, y)
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Simple Line Graph")
+plt.show()
+```
+
+## Sample Output
+
+<img width="601" height="459" alt="image" src="https://github.com/user-attachments/assets/5e168148-e6a7-4a97-8e8b-605a7b9b7c65" />
+
+[Back to Index](#index)
