@@ -1,6 +1,6 @@
 
 <div align="center">
-
+  
 # MODY UNIVERSITY OF SCIENCE AND TECHNOLOGY
 
 ## School of Engineering and Technology
@@ -18,8 +18,8 @@
 
 <br><br>
 
-**Student Name:** Ayati Kumawat
-**Enrollment Number:** 240027
+**Student Name:** Bhavya Maheshwari
+**Enrollment Number:** 240029
 
 <br>
 
@@ -51,25 +51,21 @@ Lakshmangarh, Rajasthan
     <td>Addition of Two Numbers</td>
     <td><a href="#program-1-addition-of-two-numbers">Program 1</a></td>
   </tr>
-
   <tr>
     <td>2</td>
     <td>Largest of Three Numbers</td>
     <td><a href="#program-2-largest-of-three-numbers">Program 2</a></td>
   </tr>
-
   <tr>
     <td>3</td>
     <td>Factorial of a Number</td>
     <td><a href="#program-3-factorial-of-a-number">Program 3</a></td>
   </tr>
-
   <tr>
     <td>4</td>
     <td>Prime Number Check</td>
     <td><a href="#program-4-prime-number-check">Program 4</a></td>
   </tr>
-
   <tr>
     <td>5</td>
     <td>Fibonacci Series</td>
@@ -96,7 +92,7 @@ Lakshmangarh, Rajasthan
     <td><a href="#program-9-selection-sort">Program 9</a></td>
   </tr>
   <tr>
-  <td>10</td>
+    <td>10</td>
     <td>Quick Sort</td>
     <td><a href="#program-10-quick-sort">Program 10</a></td>
   </tr>
@@ -108,7 +104,7 @@ Lakshmangarh, Rajasthan
   <tr>
     <td>12</td>
     <td>Binary Search</td>
-    <td><a href="#program-12-Binary-search">Program 12</a></td>
+    <td><a href="#program-12-binary-search">Program 12</a></td>
   </tr>
   <tr>
     <td>13</td>
@@ -118,32 +114,42 @@ Lakshmangarh, Rajasthan
   <tr>
     <td>14</td>
     <td>Mathematical Functions in Python</td>
-    <td><a href="#program-14-Mathematical-Functions-in-Python">Program 14</a></td>
+    <td><a href="#program-14-mathematical-functions-in-python">Program 14</a></td>
   </tr>
   <tr>
     <td>15</td>
     <td>Directed Graph</td>
-    <td><a href="#program-15-Directed-Graph">Program 15</a></td>
+    <td><a href="#program-15-directed-graph">Program 15</a></td>
   </tr>
   <tr>
     <td>16</td>
     <td>Undirected Graph</td>
-    <td><a href="#program-16-Undirected-Graph">Program 16</a></td>
+    <td><a href="#program-16-undirected-graph">Program 16</a></td>
   </tr>
   <tr>
     <td>17</td>
-    <td>weighted Graph</td>
-    <td><a href="#program-17-Weighted-Graph">Program 17</a></td>
+    <td>Weighted Graph</td>
+    <td><a href="#program-17-weighted-graph">Program 17</a></td>
   </tr>
   <tr>
     <td>18</td>
-    <td>Directed weighted Graph</td>
-    <td><a href="#program-18-Directed-weighted-Graph">Program 18</a></td>
+    <td>Directed Weighted Graph</td>
+    <td><a href="#program-18-directed-weighted-graph">Program 18</a></td>
   </tr>
   <tr>
     <td>19</td>
     <td>Plotting a Simple Line Graph Using Python</td>
-    <td><a href="#program-19-Plotting-a-Simple-Line-Graph-Using-Python">Program 19</a></td>
+    <td><a href="#program-19-plotting-a-simple-line-graph-using-python">Program 19</a></td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>Comparison of Time Complexities of Dijkstra’s and BellmanFord Algorithms</td>
+    <td><a href="#program-20-comparison-of-time-complexities-of-dijkstra’s-and-bellmanford-algorithms">Program 20</a></td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>Comparison of Time Complexities of Prim’s and Kruskal’s Algorithms</td>
+    <td><a href="#program-21-comparison-of-time-complexities-of-prims-and-kruskals-algorithms">Program 21</a></td>
   </tr>
 </table>
 
@@ -1250,6 +1256,95 @@ plt.show()
 ## Sample Output
 
 <img width="601" height="459" alt="image" src="https://github.com/user-attachments/assets/5e168148-e6a7-4a97-8e8b-605a7b9b7c65" />
+
+[Back to Index](#index)
+
+# Program 20: Comparison of Time Complexities of Dijkstra’s and BellmanFord Algorithms
+
+## Aim
+
+To write a Python program to plot a graph comparing the theoretical time complexities of Dijkstra’s and BellmanFord algorithms using Matplotlib.
+
+
+## Program
+
+```python
+
+import matplotlib.pyplot as plt
+
+# Number of vertices
+V = [5, 10, 15, 20, 25, 30]
+
+# Assume a dense graph: E = V*(V-1)/2
+E = [v * (v - 1) // 2 for v in V]
+
+# Theoretical time complexity
+dijkstra = [v ** 2 for v in V]       # O(V^2)
+bellman_ford = [v * e for v, e in zip(V, E)]  # O(VE)
+
+# Plot the graph
+plt.plot(V, dijkstra, marker='o',
+         label="Dijkstra O(V^2)")
+
+plt.plot(V, bellman_ford, marker='o',
+         label="Bellman-Ford O(VE)")
+
+plt.xlabel("Number of Vertices (V)")
+plt.ylabel("Theoretical Operations")
+plt.title("Dijkstra vs Bellman-Ford Complexity")
+
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+## Sample Output
+
+<img width="638" height="483" alt="image" src="https://github.com/user-attachments/assets/e9a49e9b-a36a-4e80-a1ea-57d927c8fb30" />
+
+[Back to Index](#index)
+
+# Program 21: Comparison of Time Complexities of Prim’s and Kruskal’s Algorithms
+
+## Aim
+
+To write a Python program to plot a graph comparing the theoretical time complexities of Prim’s and Kruskal’s algorithms using Matplotlib.
+
+## Program
+
+```python
+import matplotlib.pyplot as plt
+import math
+
+# Number of vertices
+V = [5, 10, 15, 20, 25, 30]
+
+# Assume a dense graph: E = V*(V-1)/2
+E = [v * (v - 1) // 2 for v in V]
+
+# Theoretical time complexity
+prim = [v ** 2 for v in V]  # O(V^2)
+kruskal = [e * math.log2(e) for e in E]  # O(E log E)
+
+# Plot the graph
+plt.plot(V, prim, marker='o',
+         label="Prim O(V^2)")
+
+plt.plot(V, kruskal, marker='o',
+         label="Kruskal O(E log E)")
+
+plt.xlabel("Number of Vertices (V)")
+plt.ylabel("Theoretical Operations")
+plt.title("Prim vs Kruskal Complexity")
+
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+## Sample Output
+
+<img width="636" height="479" alt="image" src="https://github.com/user-attachments/assets/a6c85f58-417d-499e-acdd-c4712c65b4ed" />
 
 [Back to Index](#index)
 
